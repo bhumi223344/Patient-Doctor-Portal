@@ -1,0 +1,7 @@
+.example-container mat-form-field + mat-form-field {
+    display: flex;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 500px
+  }
+  

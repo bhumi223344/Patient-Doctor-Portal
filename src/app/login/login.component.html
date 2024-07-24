@@ -1,0 +1,16 @@
+<div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter your Username</mat-label>
+      <input
+        matInput
+        placeholder="abc123"
+        [formControl]="username"
+        (blur)="updateErrorMessage()"
+        required
+      />
+      @if (username.invalid) {
+        <mat-error>{{errorMessage()}}</mat-error>
+      }
+    </mat-form-field>
+  </div>
+  
