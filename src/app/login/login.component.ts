@@ -8,6 +8,7 @@ import {merge} from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { PatientService } from '../services/patient.service';
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
