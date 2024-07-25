@@ -7,11 +7,12 @@ import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angula
 import {MatInputModule} from '@angular/material/input';
 import {merge} from 'rxjs';
 import { LoginComponent } from "./login/login.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent],
+  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

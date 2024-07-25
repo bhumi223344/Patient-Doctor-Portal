@@ -1,4 +1,4 @@
-<form class="example-form"  #loginForm="ngForm">
+<form class="example-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <h1>Admin Login</h1>
     <mat-form-field class="example-full-width">
       <mat-label>username</mat-label>
@@ -23,9 +23,13 @@
       <section>
         <div class="example-label"></div>
         <div class="example-button-row">
-          <button mat-flat-button>Submit</button>
+          <button mat-flat-button type="submit">Submit</button>
           <button mat-flat-button>Clear</button>
           <button mat-flat-button>Delete</button>
           
         </div>
+    </section>
+    </form>
+
+        <div *ngIf = "loginFailed">Login Failed.. Please try again!!</div>
   
