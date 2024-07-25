@@ -15,4 +15,10 @@ import {merge} from 'rxjs';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  usernameFormControl = new FormControl('', [Validators.required])
+  passwordFormControl = new FormControl('', [Validators.required])
+
+  username: string = '';
+  password: string = '';
+  
 }

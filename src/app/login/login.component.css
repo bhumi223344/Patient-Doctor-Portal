@@ -1,0 +1,36 @@
+.example-form {
+    min-width: 150px;
+    max-width: 1285px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+    background-color: rgba(113, 113, 240, 0.758);
+    height: 70%;
+    margin: 0;
+
+  }
+
+.example-full-width {
+    width: 20%;
+    align-items: center;
+  }
+
+  .example-label {
+    width: 30%;
+    align-items: center;
+    color: blue;
+  }
+.example-button-row {
+    color: blue;
+    display: table-cell;
+    max-width: 600px;
+    background-color: blue;
+}
+
+/* .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+    color: white;
+    background-color: blue;
+  } */
