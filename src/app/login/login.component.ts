@@ -6,6 +6,7 @@ import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angula
 import {MatInputModule} from '@angular/material/input';
 import {merge} from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { PatientService } from '../services/patient.service';
 
 @Component({
   selector: 'app-login',
@@ -22,16 +23,21 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   loginFailed: boolean = false ;
+
+  constructor(private PatientService: PatientService) {}
   
   onSubmit() {
-    if (this.username === 'Bhumi' && this.password === 'Bhumi123') {
-      this.loginFailed = false;
-    }
-
-    else{
-      this.loginFailed = true;
-      console.log("login failed");
-    }
-
+    this.PatientService.login(this.username, this.password).subscribe((isLoggedIn: any) => {
+      if (isLoggedIn) {
+        console.log('Login Successful');
+        this.loginFailed = false;
+       
+      } else {
+        console.log('Login Failed!!');
+        this.loginFailed = true;
+        
+      }
+    });
   }
 }
+  
