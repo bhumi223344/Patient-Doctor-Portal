@@ -8,11 +8,13 @@ import {MatInputModule} from '@angular/material/input';
 import {merge} from 'rxjs';
 import { LoginComponent } from "./login/login.component";
 import { CommonModule } from '@angular/common';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { PortalComponent } from './portal/portal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule],
+  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule, MatToolbarModule, PortalComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
