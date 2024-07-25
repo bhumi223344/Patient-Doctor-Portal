@@ -15,23 +15,4 @@ import {merge} from 'rxjs';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  readonly username = new FormControl('', [Validators.required]);
-
-  errorMessage = signal('');
-
-  constructor() {
-    merge(this.username.statusChanges, this.username.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.updateErrorMessage());
-  }
-
-  updateErrorMessage() {
-    if (this.username.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
-    } 
-    else {
-      this.errorMessage.set('');
-    }
-  }
 }
-
