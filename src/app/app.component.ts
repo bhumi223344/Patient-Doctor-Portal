@@ -10,11 +10,12 @@ import { LoginComponent } from "./login/login.component";
 import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { PortalComponent } from './portal/portal.component';
+import { AddPatientComponent } from "./add-patient/add-patient.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule, MatToolbarModule, PortalComponent],
+  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule, MatToolbarModule, PortalComponent, AddPatientComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
