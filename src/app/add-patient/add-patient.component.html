@@ -1,7 +1,7 @@
 <div mat-dialog-title>
     <h1>Patient Details</h1>
 </div>
-<!-- <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
         <mat-form-field appearance="outline">
@@ -10,7 +10,7 @@
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Age</mat-label>
-            <input matInput type="text" placeholder="Ex. 45" formControlName="age">
+            <input matInput type="number" placeholder="Ex. 45" formControlName="age">
           </mat-form-field>
         </div>
         <div class="row">
@@ -38,10 +38,8 @@
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>Student class</mat-label>
-                <mat-select formControlName="studentClass">
-                    <mat-option *ngFor="let val of studentClass " [value]="val">{{val}}</mat-option>
-                </mat-select>
+                <mat-label>Allergies</mat-label>
+                <input matInput type="text" placeholder="peenut" formControlName="allergies">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Contact Number</mat-label>
@@ -50,12 +48,12 @@
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>Father's Name</mat-label>
-                <input matInput type="text" placeholder="Ex. Mr. abc" formControlName="fathersName">
+                <mat-label>Emergency Contact Name</mat-label>
+                <input matInput type="text" placeholder="Ex. abc" formControlName="emergencyContactName">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-label>Mother's Name</mat-label>
-                <input matInput type="text" placeholder="Ex. Mrs. abc" formControlName="mothersName">
+                <mat-label>Medical History</mat-label>
+                <input matInput type="text" placeholder="Ex. blood pressure" formControlName="medicalHistory">
             </mat-form-field>
     
         </div>
@@ -64,7 +62,7 @@
     
     </div>
     <div mat-dialog-actions class="action">
-        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
-        <button mat-raised-button color="primary" type="submit">{{data? 'Update': 'save'}}</button>
+        <button mat-raised-button type="button" >Cancel</button>
+        <button mat-raised-button color="primary" type="submit"></button>
     </div>
-    </form> -->
+    </form> 

@@ -11,6 +11,14 @@ export class PatientService {
   
   constructor(private http: HttpClient) {}
 
+  addPatient(data: any): Observable<any> {
+    return this.http.post('http://localhost:3000/Patients', data);
+  }
+
+  getPatientList(): Observable<any> {
+    return this.http.get('http://localhost:3000/Patients');
+  }
+
   login(username: string, password: string): Observable<boolean> {
     return this.http.get<any[]>(this.UserUrl).pipe(
       map(User => {

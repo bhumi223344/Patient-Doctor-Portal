@@ -8,3 +8,78 @@
     Doctor
   </button>
 </mat-toolbar>
+
+<div class="main-body">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+  
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+   
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> firstName</th>
+        <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> lastName </th>
+        <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+      </ng-container>
+  
+    
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> dob </th>
+        <td mat-cell *matCellDef="let row"> {{row.dob | date}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> gender </th>
+        <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="studentClass">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> studentClass</th>
+        <td mat-cell *matCellDef="let row"> {{row.studentClass}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="contactNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> contactNumber</th>
+        <td mat-cell *matCellDef="let row"> {{row.contactNumber}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fathersName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> fathersName </th>
+        <td mat-cell *matCellDef="let row"> {{row.fathersName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="mothersName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> mothersName</th>
+        <td mat-cell *matCellDef="let row"> {{row.mothersName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> action</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button  color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button  color="danger">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
