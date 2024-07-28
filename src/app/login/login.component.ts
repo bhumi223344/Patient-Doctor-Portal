@@ -8,11 +8,13 @@ import {merge} from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { PatientService } from '../services/patient.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, CommonModule, MatSnackBarModule],
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, CommonModule, MatSnackBarModule, MatDialogModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -25,8 +27,18 @@ export class LoginComponent {
   password: string = '';
   loginFailed: boolean = false ;
 
-  constructor(private PatientService: PatientService) {}
+  constructor(
+    private PatientService: PatientService,
+    private router: Router
+
+  ) {}
   
+  onLogin() {
+
+    this.router.navigate(['/portal']);
+  }
+
+
   onSubmit() {
     this.PatientService.login(this.username, this.password).subscribe((isLoggedIn: any) => {
       if (isLoggedIn) {

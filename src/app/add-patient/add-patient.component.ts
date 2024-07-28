@@ -19,6 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CoreService } from '../core/core.service';
 
+
 @Component({
   selector: 'app-add-patient',
   standalone: true,

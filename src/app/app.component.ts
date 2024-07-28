@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ChangeDetectionStrategy, signal} from '@angular/core';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
@@ -13,10 +13,12 @@ import { PortalComponent } from './portal/portal.component';
 import { AddPatientComponent } from "./add-patient/add-patient.component";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule, MatToolbarModule, PortalComponent, AddPatientComponent, MatSnackBarModule],
+  imports: [RouterOutlet, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, LoginComponent, CommonModule, MatToolbarModule, PortalComponent, AddPatientComponent, MatSnackBarModule, RouterLink, RouterLinkActive, MatDialogModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
