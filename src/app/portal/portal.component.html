@@ -25,15 +25,15 @@
       </ng-container>
   
       
-      <ng-container matColumnDef="firstName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> firstName</th>
-        <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> fullName</th>
+        <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
       </ng-container>
   
      
-      <ng-container matColumnDef="lastName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> lastName </th>
-        <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> age</th>
+        <td mat-cell *matCellDef="let row"> {{row.age}} </td>
       </ng-container>
   
     
@@ -52,9 +52,9 @@
         <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
       </ng-container>
   
-      <ng-container matColumnDef="studentClass">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> studentClass</th>
-        <td mat-cell *matCellDef="let row"> {{row.studentClass}} </td>
+      <ng-container matColumnDef="allergies">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> allergies</th>
+        <td mat-cell *matCellDef="let row"> {{row.allergies}} </td>
       </ng-container>
   
       <ng-container matColumnDef="contactNumber">
@@ -62,23 +62,23 @@
         <td mat-cell *matCellDef="let row"> {{row.contactNumber}} </td>
       </ng-container>
   
-      <ng-container matColumnDef="fathersName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> fathersName </th>
-        <td mat-cell *matCellDef="let row"> {{row.fathersName}} </td>
+      <ng-container matColumnDef="emergencyContactName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> emergencyContactName </th>
+        <td mat-cell *matCellDef="let row"> {{row.emergencyContactName}} </td>
       </ng-container>
   
-      <ng-container matColumnDef="mothersName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> mothersName</th>
-        <td mat-cell *matCellDef="let row"> {{row.mothersName}} </td>
+      <ng-container matColumnDef="medicalHistory">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> medicalHistory</th>
+        <td mat-cell *matCellDef="let row"> {{row.medicalHistory}} </td>
       </ng-container>
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> action</th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button  color="primary">
+          <button mat-icon-button  color="primary" (click)="openEditForm(row)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button  color="danger">
+          <button mat-icon-button  color="danger" (click)="deletePatient(row.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>

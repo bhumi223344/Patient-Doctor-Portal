@@ -7,12 +7,12 @@ import {MatInputModule} from '@angular/material/input';
 import {merge} from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { PatientService } from '../services/patient.service';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, CommonModule, MatSnackBarModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

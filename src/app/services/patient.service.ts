@@ -15,9 +15,18 @@ export class PatientService {
     return this.http.post('http://localhost:3000/Patients', data);
   }
 
+  updatePatient(id: number,data: any): Observable<any> {
+    return this.http.post(`http://localhost:3000/Patients/${id}`, data);
+  }
+
   getPatientList(): Observable<any> {
     return this.http.get('http://localhost:3000/Patients');
   }
+
+  deletePatient(id: number): Observable<any> {
+    return this.http.delete(`http://localhost:3000/students/${id}`)
+    
+  } 
 
   login(username: string, password: string): Observable<boolean> {
     return this.http.get<any[]>(this.UserUrl).pipe(
